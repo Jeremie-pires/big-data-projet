@@ -7,11 +7,12 @@ import pandas as pd
 
 from schemas import PredictRequest
 
-_MODEL_PATH = Path(__file__).parent / "modele_crimes.pkl"
+_MODEL_PATH = Path(__file__).parent / "model.pkl"
 _pipeline = joblib.load(_MODEL_PATH)
 
 
 def predict(req: PredictRequest) -> float:
+    population = max(req.population, 1)  # guard against log(0)
     df = pd.DataFrame(
         [
             {
@@ -19,8 +20,8 @@ def predict(req: PredictRequest) -> float:
                 "Territorial_authority_area_2013_label": req.territorial_authority,
                 "Urban_area_2013_label": req.urban_area_label,
                 "Urban_area_type": req.urban_area_type,
-                "Population_mid_point_2015": req.population,
-                "Log_Population": math.log(req.population),
+                "Population_mid_point_2015": population,
+                "Log_Population": math.log(population),
                 "Is_Auckland": 1 if "auckland" in req.region.lower() else 0,
             }
         ]

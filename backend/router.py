@@ -6,6 +6,11 @@ from schemas import PredictRequest, PredictResponse
 router = APIRouter()
 
 
+@router.get("/health")
+def health_check():
+    return {"status": "ok", "model_loaded": True}
+
+
 @router.post("/predict", response_model=PredictResponse)
 def predict_crime_rate(req: PredictRequest) -> PredictResponse:
     value = predict(req)
