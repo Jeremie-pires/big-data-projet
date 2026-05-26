@@ -8,9 +8,9 @@
 
 | Propriété | Valeur |
 |---|---|
-| Colonne | `crime_rate` |
+| Colonne | ` Rate_per_10000_population ` (nettoyée : suppression espaces + virgules + lignes `-`) |
 | Type | Continu (float) |
-| Unité | Crimes pour 1 000 habitants |
+| Unité | Victimisations pour **10 000** habitants |
 | Famille ML | **Régression** |
 
 ## Features X retenues
@@ -41,6 +41,6 @@ Le GBR a été préféré à une régression linéaire car les relations populat
 
 **MAE (Mean Absolute Error)** en unité `crimes / 1 000 hab`.
 
-Justification : plus lisible qu'un RMSE pour un utilisateur non-statisticien ("le modèle se trompe en moyenne de X crimes pour 1 000 habitants"), et moins sensible aux outliers que le RMSE — pertinent ici car Auckland est un outlier fort.
+Justification : plus lisible qu'un RMSE pour un utilisateur non-statisticien ("le modèle se trompe en moyenne de X victimisations pour 10 000 habitants"), et moins sensible aux outliers que le RMSE — pertinent ici car les CBD/zones touristiques affichent des taux jusqu'à 5 750.
 
 Métrique secondaire : **R²** pour évaluer la part de variance expliquée.

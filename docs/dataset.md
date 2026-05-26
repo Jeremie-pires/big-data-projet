@@ -7,8 +7,11 @@ Données combinées : statistiques de criminalité NZ Police + données démogra
 
 | Propriété | Valeur |
 |---|---|
-| Granularité | Zone géographique (une ligne = une aire urbaine ou autorité territoriale) |
-| Géographie de référence | Découpage 2013 (Urban Areas, Territorial Authorities, Régions) |
+| Fichier | `analysis-public-place-assaults-sexual-assaults-and-robberies-2015-csv.csv` |
+| Granularité | Area unit (~quartier) — une ligne = une zone de recensement 2013 |
+| Lignes brutes | 2 020 |
+| Lignes utilisables (après nettoyage) | ~1 477 |
+| Géographie de référence | Découpage 2013 (Area Units, Urban Areas, Territorial Authorities, Régions) |
 | Population de référence | Estimation mid-point 2015 |
 | Format | CSV tabulaire |
 
@@ -23,14 +26,17 @@ Données combinées : statistiques de criminalité NZ Police + données démogra
 | `Population_mid_point_2015` | numérique | Population estimée au point médian 2015 | `1 495 000`, `24 300` |
 | `Log_Population` | numérique | Log naturel de la population (feature dérivée) | `14.2`, `10.1` |
 | `Is_Auckland` | binaire | Indicateur région Auckland (0/1) | `1`, `0` |
-| `crime_rate` *(cible)* | numérique | Taux de criminalité (crimes pour 1 000 habitants) | `32.4`, `18.7` |
+| `Victimisations_calendar_year_2015` | numérique | Nombre de victimisations dans la zone en 2015 | `550`, `12` |
+| ` Rate_per_10000_population ` *(cible)* | numérique (string brut avec virgules) | Taux de victimisations pour **10 000** habitants | `346`, `1199` |
+| ` Rate_ratio_NZ_average_rate ` | numérique | Ratio par rapport à la moyenne nationale | `6.6`, `1.1` |
 
 ## Stats clés
 
-- **Déséquilibre géographique** : Auckland représente ~33 % de la population totale ; son poids dans le dataset peut tirer les prédictions.
-- **`Log_Population`** : feature dérivée ajoutée pour linéariser la relation population / taux de criminalité. Ne pas la supprimer sans réévaluer le modèle.
-- **`Is_Auckland`** : flag binaire car Auckland est un outlier statistique fort (aire, densité, mix ethnique).
-- **Valeurs manquantes** : comblées par la médiane via `SimpleImputer(strategy="median")` dans le pipeline.
+- **Taux supprimés (417 lignes, ~21 %)** : les zones avec ≤ 5 victimisations affichent `-` — confidentialité statistique NZ Police. Ces lignes sont exclues avant l'entraînement.
+- **Population = 0 (126 lignes)** : zones non-résidentielles (industrielles, parcs). Exclues car `log(0)` est indéfini.
+- **Distribution très right-skewed** : médiane ≈ 33, max = 5 750 (CBD/centres touristiques avec peu de résidents). Log-transform de la population atténue l'effet.
+- **Auckland (437 lignes, 22 %)** : outlier statistique fort — population, densité et taux plus élevés. Indicateur binaire `Is_Auckland` ajouté.
+- **Pas de valeurs manquantes** dans les colonnes features : `SimpleImputer` gardé pour robustesse déploiement.
 
 ## Limites connues
 
