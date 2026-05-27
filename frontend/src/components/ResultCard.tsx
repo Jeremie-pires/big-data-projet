@@ -1,6 +1,6 @@
 import type { PredictResponse } from '../types/prediction'
 
-const NATIONAL_AVERAGE = 28.5
+const NATIONAL_AVERAGE = 86.9
 
 interface Props {
   data: PredictResponse

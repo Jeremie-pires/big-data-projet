@@ -1,6 +1,6 @@
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ReferenceLine, ResponsiveContainer, Cell } from 'recharts'
 
-const NATIONAL_AVERAGE = 28.5
+const NATIONAL_AVERAGE = 86.9
 
 interface Props {
   prediction: number
@@ -19,8 +19,8 @@ export default function ComparisonChart({ prediction, region }: Props) {
       <ResponsiveContainer width="100%" height={200}>
         <BarChart data={data} margin={{ top: 4, right: 8, left: 0, bottom: 4 }}>
           <XAxis dataKey="name" tick={{ fontSize: 12 }} />
-          <YAxis tick={{ fontSize: 12 }} unit=" c/1k" />
-          <Tooltip formatter={(v) => [`${Number(v).toFixed(1)} crimes/1 000 hab`, '']} />
+          <YAxis tick={{ fontSize: 12 }} unit=" c/10k" />
+          <Tooltip formatter={(v) => [`${Number(v).toFixed(1)} crimes / 10 000 hab`, '']} />
           <ReferenceLine y={NATIONAL_AVERAGE} stroke="#94a3b8" strokeDasharray="4 2" />
           <Bar dataKey="value" radius={[4, 4, 0, 0]}>
             {data.map((_, i) => (

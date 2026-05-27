@@ -11,3 +11,11 @@ export interface PredictResponse {
   unit: string
   region: string
 }
+
+export interface StatsResponse {
+  mean: number
+  median: number
+  n_zones: number
+  model_mae: number
+  model_r2: number
+}
