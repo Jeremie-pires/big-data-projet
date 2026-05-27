@@ -105,7 +105,7 @@ export default function PredictForm({ onSubmit, isLoading }: Props) {
 
         <div className="sm:col-span-2">
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            Population <span className="text-gray-400 font-normal">(estimation 2015)</span>
+            Population <span className="text-gray-400 font-normal">(zone locale, estimation 2015 — entre 500 et 16 000)</span>
           </label>
           <input
             type="number"
@@ -113,7 +113,8 @@ export default function PredictForm({ onSubmit, isLoading }: Props) {
             onChange={handle('population')}
             required
             min={1}
-            placeholder="ex : 150 000"
+            max={16000}
+            placeholder="ex : 2 000"
             className={SELECT_CLASS}
           />
         </div>
