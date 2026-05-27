@@ -11,5 +11,13 @@ class PredictRequest(BaseModel):
 
 class PredictResponse(BaseModel):
     prediction: float
-    unit: str = "crimes / 1 000 habitants"
+    unit: str = "crimes / 10 000 habitants"
     region: str
+
+
+class StatsResponse(BaseModel):
+    mean: float
+    median: float
+    n_zones: int
+    model_mae: float
+    model_r2: float
