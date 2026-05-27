@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.env
+node_modules/
+frontend/dist/
+*.csv
+.DS_Store
