@@ -1,0 +1,199 @@
+{
+  "authByRegion": {
+    "Area Outside Region": [
+      "Area Outside Territorial Authority",
+      "Chatham Islands Territory"
+    ],
+    "Auckland Region": [
+      "Auckland"
+    ],
+    "Bay of Plenty Region": [
+      "Area Outside Territorial Authority",
+      "Kawerau District",
+      "Opotiki District",
+      "Rotorua District",
+      "Taupo District",
+      "Tauranga City",
+      "Western Bay of Plenty District",
+      "Whakatane District"
+    ],
+    "Canterbury Region": [
+      "Area Outside Territorial Authority",
+      "Ashburton District",
+      "Christchurch City",
+      "Hurunui District",
+      "Kaikoura District",
+      "Mackenzie District",
+      "Selwyn District",
+      "Timaru District",
+      "Waimakariri District",
+      "Waimate District",
+      "Waitaki District"
+    ],
+    "Gisborne Region": [
+      "Area Outside Territorial Authority",
+      "Gisborne District"
+    ],
+    "Hawke's Bay Region": [
+      "Area Outside Territorial Authority",
+      "Central Hawke's Bay District",
+      "Hastings District",
+      "Napier City",
+      "Rangitikei District",
+      "Taupo District",
+      "Wairoa District"
+    ],
+    "Manawatu-Wanganui Region": [
+      "Area Outside Territorial Authority",
+      "Horowhenua District",
+      "Manawatu District",
+      "Palmerston North City",
+      "Rangitikei District",
+      "Ruapehu District",
+      "Stratford District",
+      "Tararua District",
+      "Taupo District",
+      "Waitomo District",
+      "Wanganui District"
+    ],
+    "Marlborough Region": [
+      "Area Outside Territorial Authority",
+      "Marlborough District"
+    ],
+    "Nelson Region": [
+      "Area Outside Territorial Authority",
+      "Nelson City"
+    ],
+    "Northland Region": [
+      "Area Outside Territorial Authority",
+      "Far North District",
+      "Kaipara District",
+      "Whangarei District"
+    ],
+    "Otago Region": [
+      "Area Outside Territorial Authority",
+      "Central Otago District",
+      "Clutha District",
+      "Dunedin City",
+      "Queenstown-Lakes District",
+      "Waitaki District"
+    ],
+    "Southland Region": [
+      "Area Outside Territorial Authority",
+      "Gore District",
+      "Invercargill City",
+      "Southland District"
+    ],
+    "Taranaki Region": [
+      "Area Outside Territorial Authority",
+      "New Plymouth District",
+      "South Taranaki District",
+      "Stratford District"
+    ],
+    "Tasman Region": [
+      "Tasman District"
+    ],
+    "Waikato Region": [
+      "Area Outside Territorial Authority",
+      "Hamilton City",
+      "Hauraki District",
+      "Matamata-Piako District",
+      "Otorohanga District",
+      "Rotorua District",
+      "South Waikato District",
+      "Taupo District",
+      "Thames-Coromandel District",
+      "Waikato District",
+      "Waipa District",
+      "Waitomo District"
+    ],
+    "Wellington Region": [
+      "Area Outside Territorial Authority",
+      "Carterton District",
+      "Kapiti Coast District",
+      "Lower Hutt City",
+      "Masterton District",
+      "Porirua City",
+      "South Wairarapa District",
+      "Tararua District",
+      "Upper Hutt City",
+      "Wellington City"
+    ],
+    "West Coast Region": [
+      "Area Outside Territorial Authority",
+      "Buller District",
+      "Grey District",
+      "Westland District"
+    ]
+  },
+  "urbanByAuth": {
+    "Area Outside Territorial Authority": "Oceanic-in Region but not in TA",
+    "Ashburton District": "Ashburton",
+    "Auckland": "Southern Auckland Zone",
+    "Buller District": "Rural (Incl.some Off Shore Islands)",
+    "Carterton District": "Rural (Incl.some Off Shore Islands)",
+    "Central Hawke's Bay District": "Rural (Incl.some Off Shore Islands)",
+    "Central Otago District": "Rural (Incl.some Off Shore Islands)",
+    "Chatham Islands Territory": "Oceanic",
+    "Christchurch City": "Christchurch",
+    "Clutha District": "Rural Centre",
+    "Dunedin City": "Dunedin",
+    "Far North District": "Rural (Incl.some Off Shore Islands)",
+    "Gisborne District": "Gisborne",
+    "Gore District": "Gore",
+    "Grey District": "Rural (Incl.some Off Shore Islands)",
+    "Hamilton City": "Hamilton Zone",
+    "Hastings District": "Hastings Zone",
+    "Hauraki District": "Rural (Incl.some Off Shore Islands)",
+    "Horowhenua District": "Levin",
+    "Hurunui District": "Rural (Incl.some Off Shore Islands)",
+    "Invercargill City": "Invercargill",
+    "Kaikoura District": "Kaikoura",
+    "Kaipara District": "Rural (Incl.some Off Shore Islands)",
+    "Kapiti Coast District": "Kapiti",
+    "Kawerau District": "Kawerau",
+    "Lower Hutt City": "Lower Hutt Zone",
+    "Mackenzie District": "Rural Centre",
+    "Manawatu District": "Feilding",
+    "Marlborough District": "Blenheim",
+    "Masterton District": "Masterton",
+    "Matamata-Piako District": "Rural (Incl.some Off Shore Islands)",
+    "Napier City": "Napier Zone",
+    "Nelson City": "Nelson",
+    "New Plymouth District": "New Plymouth",
+    "Opotiki District": "Rural (Incl.some Off Shore Islands)",
+    "Otorohanga District": "Rural (Incl.some Off Shore Islands)",
+    "Palmerston North City": "Palmerston North",
+    "Porirua City": "Porirua Zone",
+    "Queenstown-Lakes District": "Rural (Incl.some Off Shore Islands)",
+    "Rangitikei District": "Rural (Incl.some Off Shore Islands)",
+    "Rotorua District": "Rotorua",
+    "Ruapehu District": "Rural (Incl.some Off Shore Islands)",
+    "Selwyn District": "Rural (Incl.some Off Shore Islands)",
+    "South Taranaki District": "Rural (Incl.some Off Shore Islands)",
+    "South Waikato District": "Tokoroa",
+    "South Wairarapa District": "Rural (Incl.some Off Shore Islands)",
+    "Southland District": "Rural (Incl.some Off Shore Islands)",
+    "Stratford District": "Rural (Incl.some Off Shore Islands)",
+    "Tararua District": "Rural (Incl.some Off Shore Islands)",
+    "Tasman District": "Rural (Incl.some Off Shore Islands)",
+    "Taupo District": "Taupo",
+    "Tauranga City": "Tauranga",
+    "Thames-Coromandel District": "Rural (Incl.some Off Shore Islands)",
+    "Timaru District": "Timaru",
+    "Upper Hutt City": "Upper Hutt Zone",
+    "Waikato District": "Rural (Incl.some Off Shore Islands)",
+    "Waimakariri District": "Rural (Incl.some Off Shore Islands)",
+    "Waimate District": "Rural (Incl.some Off Shore Islands)",
+    "Waipa District": "Te Awamutu Zone",
+    "Wairoa District": "Rural (Incl.some Off Shore Islands)",
+    "Waitaki District": "Oamaru",
+    "Waitomo District": "Rural (Incl.some Off Shore Islands)",
+    "Wanganui District": "Wanganui",
+    "Wellington City": "Wellington Zone",
+    "Western Bay of Plenty District": "Rural (Incl.some Off Shore Islands)",
+    "Westland District": "Rural (Incl.some Off Shore Islands)",
+    "Whakatane District": "Whakatane",
+    "Whangarei District": "Whangarei"
+  }
+}
