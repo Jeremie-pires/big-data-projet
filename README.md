@@ -1,3 +1,12 @@
+---
+title: Crime Rate Predictor
+emoji: 🔍
+colorFrom: blue
+colorTo: purple
+sdk: docker
+pinned: false
+---
+
 # Crime Rate Predictor — New Zealand
 
 Application full-stack de prédiction du taux de criminalité par zone géographique en Nouvelle-Zélande, développée dans le cadre d'un projet Bachelor Data. À partir de la région, du type d'urbanisation et de la population d'une zone, un modèle GradientBoostingRegressor (scikit-learn, MAE = 91.6 crimes / 10 000 hab, R² = 0.205) estime le taux de criminalité attendu. L'objectif : permettre à un analyste ou un citoyen curieux de comparer des zones entre elles sans connaissances en data science, via un formulaire simple et des visualisations Recharts.
@@ -59,3 +68,5 @@ docker run -p 7860:7860 crime-predictor
 | [docs/question-predictive.md](docs/question-predictive.md) | Cible, features, choix du modèle et de la métrique |
 | [docs/user-journey.md](docs/user-journey.md) | Parcours utilisateur |
 | [docs/diagramme-sequence.md](docs/diagramme-sequence.md) | Séquence technique front ↔ back ↔ modèle |
+| [docs/screenshot.md](docs/screenshot.md) |
+
