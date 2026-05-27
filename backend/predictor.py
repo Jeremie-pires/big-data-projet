@@ -1,19 +1,6 @@
 import math
 from pathlib import Path
 
-# modele_crimes.pkl was pickled with an old numpy that stores MT19937 as a
-# class type instead of a string name. Patch the ctor before joblib.load.
-import numpy.random._pickle as _nrp
-
-_orig_bit_generator_ctor = _nrp.__bit_generator_ctor
-
-def _compat_bit_generator_ctor(bit_generator_name="MT19937"):
-    if isinstance(bit_generator_name, type):
-        return bit_generator_name()
-    return _orig_bit_generator_ctor(bit_generator_name)
-
-_nrp.__bit_generator_ctor = _compat_bit_generator_ctor
-
 import joblib
 import numpy as np
 import pandas as pd
