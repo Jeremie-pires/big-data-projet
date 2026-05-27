@@ -7,7 +7,7 @@ import pandas as pd
 
 from schemas import PredictRequest
 
-_MODEL_PATH = Path(__file__).parent / "model.pkl"
+_MODEL_PATH = Path(__file__).parent / "modele_crimes.pkl"
 _pipeline = joblib.load(_MODEL_PATH)
 
 
