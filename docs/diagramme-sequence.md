@@ -14,7 +14,7 @@ sequenceDiagram
     U->>FE: Remplit le formulaire et clique "Prédire"
     FE->>RQ: useMutation → déclenche la requête
 
-    RQ->>API: POST /predict<br/>{ region, territorial_authority,<br/>  urban_area, urban_type,<br/>  population }
+    RQ->>API: POST /api/predict<br/>{ region, territorial_authority,<br/>  urban_area_label, urban_area_type,<br/>  population }
 
     API->>API: Validation Pydantic (PredictRequest)
     API->>API: Construit DataFrame pandas<br/>+ ajoute Log_Population, Is_Auckland
@@ -25,7 +25,7 @@ sequenceDiagram
     M-->>P: [34.7]
     P-->>API: np.ndarray([34.7])
 
-    API-->>RQ: 200 OK<br/>{ prediction: 34.7,<br/>  unit: "crimes/1000 hab",<br/>  region: "Auckland" }
+    API-->>RQ: 200 OK<br/>{ prediction: 34.7 }<br/>(crimes / 10 000 hab)
 
     RQ-->>FE: data mis à jour (cache React Query)
     FE-->>U: Affiche résultat + graphique Recharts
@@ -36,5 +36,5 @@ sequenceDiagram
 | Cas | Réponse API | Comportement Frontend |
 |---|---|---|
 | Payload invalide (champ manquant) | `422 Unprocessable Entity` | Message de validation inline sur le formulaire |
-| Région inconnue du modèle | `200` avec avertissement `unknown_category: true` | Badge "zone peu représentée dans les données" |
+| Région inconnue du modèle | `200` avec valeur prédite (OneHotEncoder `handle_unknown="ignore"`) | Avertissement "zone peu représentée" à ajouter en V2 |
 | Backend inaccessible | Timeout / `503` | Toast d'erreur, retry automatique React Query |

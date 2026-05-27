@@ -12,10 +12,11 @@ graph TD
     Model[("modele_crimes.pkl\nGradientBoostingRegressor\n(joblib)")]
 
     User -->|interagit| FE
-    FE -->|"POST /predict\n{ region, pop, urban_type… }"| API
+    FE -->|"GET /api/health"| API
+    FE -->|"POST /api/predict\n{ region, pop, urban_type… }"| API
     API -->|"pipeline.predict(df)"| Model
     Model -->|prédiction float| API
-    API -->|"{ prediction, unit }"| FE
+    API -->|"{ prediction: float }"| FE
     FE -->|affiche résultat\n+ graphiques Recharts| User
 ```
 
@@ -24,8 +25,8 @@ graph TD
 | Étape | Acteur | Détail |
 |---|---|---|
 | 1 | Utilisateur | Remplit le formulaire (région, population, type urbain) |
-| 2 | Frontend | Envoie `POST /predict` avec le payload JSON |
+| 2 | Frontend | Envoie `POST /api/predict` avec le payload JSON |
 | 3 | Backend | Valide le payload (Pydantic), reconstruit le DataFrame |
 | 4 | Modèle | `pipeline.predict()` → float (taux de criminalité) |
-| 5 | Backend | Retourne `{ prediction, unit, confidence_interval }` |
+| 5 | Backend | Retourne `{ prediction: float }` (taux en crimes / 10 000 hab) |
 | 6 | Frontend | Affiche le résultat, met à jour les graphiques Recharts |

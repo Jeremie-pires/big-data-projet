@@ -10,7 +10,7 @@ Données combinées : statistiques de criminalité NZ Police + données démogra
 | Fichier | `analysis-public-place-assaults-sexual-assaults-and-robberies-2015-csv.csv` |
 | Granularité | Area unit (~quartier) — une ligne = une zone de recensement 2013 |
 | Lignes brutes | 2 020 |
-| Lignes utilisables (après nettoyage) | ~1 477 |
+| Lignes utilisables (après nettoyage) | 1 603 |
 | Géographie de référence | Découpage 2013 (Area Units, Urban Areas, Territorial Authorities, Régions) |
 | Population de référence | Estimation mid-point 2015 |
 | Format | CSV tabulaire |
@@ -34,7 +34,7 @@ Données combinées : statistiques de criminalité NZ Police + données démogra
 
 - **Taux supprimés (417 lignes, ~21 %)** : les zones avec ≤ 5 victimisations affichent `-` — confidentialité statistique NZ Police. Ces lignes sont exclues avant l'entraînement.
 - **Population = 0 (126 lignes)** : zones non-résidentielles (industrielles, parcs). Exclues car `log(0)` est indéfini.
-- **Distribution très right-skewed** : médiane ≈ 33, max = 5 750 (CBD/centres touristiques avec peu de résidents). Log-transform de la population atténue l'effet.
+- **Distribution très right-skewed** : médiane ≈ 33, max = 5 750 (CBD/centres touristiques avec peu de résidents). Log-transform de la population atténue l'effet. Cette skewness explique en partie le R² faible (0.205) du modèle : les outliers extrêmes sont difficiles à prédire.
 - **Auckland (437 lignes, 22 %)** : outlier statistique fort — population, densité et taux plus élevés. Indicateur binaire `Is_Auckland` ajouté.
 - **Pas de valeurs manquantes** dans les colonnes features : `SimpleImputer` gardé pour robustesse déploiement.
 
